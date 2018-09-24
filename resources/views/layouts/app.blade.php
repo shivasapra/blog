@@ -60,7 +60,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
@@ -71,10 +71,30 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
+ 
+        <div class="container">
+            <div class="row" style="margin-top: 25px;">
+                @if(auth::check())
+                    <div class="col-lg-4">
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group">
+                                <a href="{{route('home')}}">Home</a>
+                            </li>
+                            <li class="list-group">
+                                <a href="{{route('post.create')}}">Create new post</a>
+                            </li>
+                        </ul>
+                    </div>    
+                    </div>
+                    <div class="col-lg-8">
+                    @else
+                    <div class="col-lg-12">
+                @endif
+                        @yield('content')
+                    </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
