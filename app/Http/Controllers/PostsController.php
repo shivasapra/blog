@@ -24,8 +24,17 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.posts.create')->with('categories',Category::all());
+    {   
+        $categories = Category::all();
+
+        if($categories->count()==0)
+           {
+
+            Session::flash('info','You must have some categories to create a post');
+            return redirect()->back();
+           }
+        
+        return view('admin.posts.create')->with('categories',$categories);
     }
 
     /**
@@ -51,10 +60,11 @@ class PostsController extends Controller
             'content' => $request->content,
             'category_id' => $request->category_id,
             'featured' => 'uploads\posts'.$featured_new_name,
+            'slug' => str_slug($request->title)
         ]);
 
         Session::flash('success','Post Created Successfully');
-        dd($request->all());
+        return redirect()->back();
     }
 
     /**
