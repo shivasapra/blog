@@ -95,6 +95,9 @@
                             <li class="list-group">
                                 <a href="{{route('post.create')}}">Create new post</a>
                             </li>
+                            <li class="list-group">
+                                <a href="{{route('post.trash')}}">Trashed posts</a>
+                            </li>
                         </ul>
                     </div>    
                     </div>
