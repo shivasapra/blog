@@ -19,7 +19,9 @@
 			<tbody>
 				@foreach($posts as $post)
 				<tr>
-					<td>Image</td>
+					<td>
+						<img class="img-responsive menu-thumbnails" src="{{$post->featured}}" alt="{{$post->title}} " width="60px" height="60px"/>
+					</td>
 					<td>{{$post->title}}</td>
 					<td>
 						<a href="#" class="btn btn-xs btn-info">Edit</a>
