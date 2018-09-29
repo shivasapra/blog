@@ -24,7 +24,7 @@
 					</td>
 					<td>{{$post->title}}</td>
 					<td>
-						<a href="#" class="btn btn-sm btn-info">Edit</a>
+						<a href="{{route('post.edit',['id' => $post->id])}}" class="btn btn-sm btn-info">Edit</a>
 						<a href="{{route('post.delete',['id' => $post->id])}}" class="btn btn-sm btn-danger">Trash</a>
 					</td>
 				</tr>

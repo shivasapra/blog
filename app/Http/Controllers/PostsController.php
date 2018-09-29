@@ -86,7 +86,9 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = post::find($id);
+        $categories = Category::all();
+        return view('admin.posts.edit')->with('post',$post)->with('categories',$categories);
     }
 
     /**
@@ -98,7 +100,30 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'title' => 'required|max:255',
+            'content' => 'required',
+            'category_id' => 'required',
+        ]);
+
+        $post = Post::find($id);
+
+        if($request->hasFile('featured'))
+        {
+        $featured = $request->featured;
+        $featured_new_name = time().$featured->getClientOriginalName();
+        $featured->move('uploads/posts',$featured_new_name);
+        $post->featured = 'uploads/posts/'.$featured_new_name;
+        }
+
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->category_id = $request->category_id;
+
+        $post->save();
+
+        Session::flash('success','Post updated Successfully');
+        return redirect()->route('posts');
     }
 
     /**
@@ -134,7 +159,7 @@ class PostsController extends Controller
     {
         $post = Post::withTrashed()->where('id',$id)->first();
         $post->Restore();
-        Session::flash('success','Post deleted Successfully');
+        Session::flash('success','Post Restored Successfully');
         return redirect()->route('posts');
     }
 }
