@@ -64,7 +64,7 @@ class PostsController extends Controller
         ]);
 
         Session::flash('success','Post Created Successfully');
-        return redirect()->back();
+        return redirect()->route('posts');
     }
 
     /**
@@ -111,6 +111,7 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $post->delete();
+        Session::flash('success','Post trashed Successfully');
         return redirect()->back();
     }
 
@@ -118,6 +119,15 @@ class PostsController extends Controller
     {
         $posts = Post::onlyTrashed()->get();
         return view('admin.posts.trashed')->with('posts',$posts);
+    }
+
+
+    public function kill($id)
+    {
+        $post = Post::withTrashed()->where('id',$id)->first();
+        $post->forceDelete();
+        Session::flash('success','Post deleted Successfully');
+        return redirect()->back();
     }
 
 }

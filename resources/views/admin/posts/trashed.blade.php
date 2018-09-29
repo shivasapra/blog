@@ -26,7 +26,7 @@
 					<td>
 						<a href="#" class="btn btn-xs btn-info">Edit</a>
 						<a href="#" class="btn btn-xs btn-success">Restore</a>
-						<a href="#" class="btn btn-xs btn-danger">Delete</a>
+						<a href="{{route('post.kill',['id' => $post->id])}}" class="btn btn-xs btn-danger">Delete</a>
 					</td>
 				</tr>
 				@endforeach
