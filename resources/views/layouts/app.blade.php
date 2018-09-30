@@ -18,8 +18,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/toastr.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/toastr.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -110,8 +110,8 @@
             </div>
         </div>
     </div>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/toastr.min.js') }}" defer></script>
+    <script src="{{ asset('/js/app.js') }}"></script>
+    <script src="{{ asset('/js/toastr.min.js') }}"></script>
     <script>
         @if(Session::has('success'))
             toastr.success("{{Session::get('success')}}")
