@@ -52,6 +52,7 @@ class PostsController extends Controller
             'featured' => 'required|image',
             'content' => 'required',
             'category_id' => 'required',
+            'tags' => 'required',
         ]);
         $featured = $request->featured;
         $featured_new_name = time().$featured->getClientOriginalName();
@@ -64,6 +65,8 @@ class PostsController extends Controller
             'featured' => 'uploads/posts/'.$featured_new_name,
             'slug' => str_slug($request->title)
         ]);
+
+        $post->tags()->attach($request->tags);
 
         Session::flash('success','Post Created Successfully');
         return redirect()->route('posts');
