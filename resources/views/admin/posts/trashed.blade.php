@@ -25,7 +25,6 @@
 						</td>
 						<td>{{$post->title}}</td>
 						<td>
-							<a href="#" class="btn btn-sm btn-info">Edit</a>
 							<a href="{{route('post.restore',['id' => $post->id])}}" class="btn btn-sm btn-success">Restore</a>
 							<a href="{{route('post.kill',['id' => $post->id])}}" class="btn btn-danger btn-sm">Delete</a>
 						</td>

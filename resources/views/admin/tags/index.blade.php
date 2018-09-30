@@ -21,8 +21,8 @@
 							{{ $tag->tag }}
 						</td>
 						<td>
-							<a href="{{route('tag.edit',['id'=>$tag->id])}}" class="btn btn-xs btn-info">Edit</a>
-							<a href="{{route('tag.delete',['id'=>$tag->id])}}" class="btn btn-xs btn-danger">Delete</a>
+							<a href="{{route('tag.edit',['id'=>$tag->id])}}" class="btn btn-sm btn-info">Edit</a>
+							<a href="{{route('tag.delete',['id'=>$tag->id])}}" class="btn btn-sm btn-danger">Delete</a>
 						</td>
 					</tr>
 					@endforeach
