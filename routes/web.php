@@ -2,7 +2,7 @@
 
 Route::get('/test',function(){
 
-	return App\Post::find(9)->tags;
+	return App\Profile::find(1)->user;
 });
 /*
 |--------------------------------------------------------------------------
