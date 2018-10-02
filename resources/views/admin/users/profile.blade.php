@@ -15,9 +15,9 @@
 
 
 
-	<div class="card-header">Edit ypur profile</div>
+	<div class="card-header">Edit your profile</div>
 		<div class="card-body">
-			<form action="{{route('user.update')}}" method='post'>
+			<form action="{{route('user.update')}}" method='post' enctype="multipart/form-data">
 				{{csrf_field()}}
 				<div class="form-group">
 					<label for="name">Name</label>

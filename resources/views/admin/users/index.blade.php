@@ -23,8 +23,8 @@
 				@if($users->count()>0)
 					@foreach($users as $user)
 						<tr>
-							<td>
-								{{$user->profile->avatar}}
+							<td><img src="{{asset($user->profile->avatar)}}" alt="" height="60px" width="60px" style="border-radius: 50px">
+								
 							</td>
 							<td>
 								{{$user->name}}
