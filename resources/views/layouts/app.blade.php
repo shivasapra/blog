@@ -93,6 +93,9 @@
                                 <a href="{{route('users')}}">Users</a>
                             </li>
                             <li class="list-group">
+                                <a href="{{route('user.profile')}}">Profile</a>
+                            </li>
+                            <li class="list-group">
                                 <a href="{{route('user.create')}}">New user</a>
                             </li>
                             <li class="list-group">
