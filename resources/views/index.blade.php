@@ -67,7 +67,7 @@
 
                             <div class="post__content-info">
 
-                                    <h2 class="post__title entry-title ">
+                                    <h2 class="post__title entry-title text-center">
                                         <a href="15_blog_details.html">{{$first->title}}</a>
                                     </h2>
 
@@ -107,9 +107,9 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="app/img/2.png" alt="seo">
+                            <img src="{{$second->featured}}" alt="seo">
                             <div class="overlay"></div>
-                            <a href="app/img/2.png" class="link-image js-zoom-image">
+                            <a href="{{$second->featured}}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
                             <a href="#" class="link-post">
@@ -121,8 +121,8 @@
 
                             <div class="post__content-info">
 
-                                    <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">The Important & Standard Post Format</a>
+                                    <h2 class="post__title entry-title text-center">
+                                        <a href="15_blog_details.html">{{$second->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -132,14 +132,14 @@
                                             <i class="seoicon-clock"></i>
 
                                             <time class="published" datetime="2016-04-17 12:00:00">
-                                                April 17, 2016
+                                                {{$second->created_at}}
                                             </time>
 
                                         </span>
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">Video</a>
+                                            <a href="#">{{$second->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -157,9 +157,9 @@
                 <article class="hentry post post-standard has-post-thumbnail sticky">
 
                         <div class="post-thumb">
-                            <img src="app/img/3.jpg" alt="seo">
+                            <img src="{{$third->featured}}" alt="seo">
                             <div class="overlay"></div>
-                            <a href="app/img/3.jpg" class="link-image js-zoom-image">
+                            <a href="{{$third->featured}}" class="link-image js-zoom-image">
                                 <i class="seoicon-zoom"></i>
                             </a>
                             <a href="#" class="link-post">
@@ -171,8 +171,8 @@
 
                             <div class="post__content-info">
 
-                                    <h2 class="post__title entry-title ">
-                                        <a href="15_blog_details.html">The Important & Standard Post Format</a>
+                                    <h2 class="post__title entry-title text-center">
+                                        <a href="15_blog_details.html">{{$third->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -182,14 +182,14 @@
                                             <i class="seoicon-clock"></i>
 
                                             <time class="published" datetime="2016-04-17 12:00:00">
-                                                April 17, 2016
+                                                {{$third->created_at}}
                                             </time>
 
                                         </span>
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">Video</a>
+                                            <a href="#">{{$third->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
