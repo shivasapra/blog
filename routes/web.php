@@ -2,7 +2,7 @@
 
 Route::get('/test',function(){
 
-	return App\Profile::find(1)->user;
+	return App\Category::find(2)->posts->count();
 });
 /*
 |--------------------------------------------------------------------------
