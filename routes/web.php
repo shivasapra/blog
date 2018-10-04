@@ -15,9 +15,10 @@ Route::get('/test',function(){
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [
+	'uses' => 'FrontEndController@index',
+	'as' =>'index'
+]);
 
 Auth::routes();
 
@@ -25,10 +26,10 @@ Auth::routes();
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
-	Route::get('/home',[
-		'uses'=> 'HomeController@index',
-		'as'=>'home'
-	]);
+Route::get('/home',[
+	'uses'=> 'HomeController@index',
+	'as'=>'home'
+]);
 
 // Posts route
 
