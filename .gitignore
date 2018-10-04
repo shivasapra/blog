@@ -12,3 +12,4 @@ npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
+/udemy-course-blog-template-files-master

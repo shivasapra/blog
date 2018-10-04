@@ -89,15 +89,11 @@
                             <li class="list-group">
                                 <a href="{{route('posts')}}">All posts</a>
                             </li>
-                            <li class="list-group">
-                                <a href="{{route('users')}}">Users</a>
-                            </li>
+                            
                             <li class="list-group">
                                 <a href="{{route('user.profile')}}">Profile</a>
                             </li>
-                            <li class="list-group">
-                                <a href="{{route('user.create')}}">New user</a>
-                            </li>
+                            
                             <li class="list-group">
                                 <a href="{{route('tags')}}">All tags</a>
                             </li>
@@ -113,6 +109,17 @@
                             <li class="list-group">
                                 <a href="{{route('post.trash')}}">Trashed posts</a>
                             </li>
+                            @if(Auth::user()->admin)
+                                <li class="list-group">
+                                    <a href="{{route('users')}}">Users</a>
+                                </li>
+                                <li class="list-group">
+                                    <a href="{{route('user.create')}}">New user</a>
+                                </li>
+                                <li class="list-group">
+                                    <a href="{{route('settings')}}">Settings</a>
+                                </li>
+                            @endif
                         </ul>
                     </div>    
                     </div>
