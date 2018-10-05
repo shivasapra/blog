@@ -38,4 +38,12 @@ class FrontEndController extends Controller
                                ->with('settings',Setting::first());
 
     }
+
+    public function tag($id){
+        $tag = Tag::find($id);
+        return view('tag')->with('title',$tag->tag)
+                          ->with('tag',$tag)
+                          ->with('categories',Category::take(7)->get())
+                          ->with('settings',Setting::first());
+    }
 }
