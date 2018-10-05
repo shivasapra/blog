@@ -11,6 +11,10 @@ class Profile extends Model
 		return $this->belongsTo('App\User');	
 	}
 
+	public function posts()
+	{
+		return $this->hasMany('App\Post');	
+	}
 	protected $fillable = ['user_id','avatar','facebook','about','youtube'];
     
 }

@@ -2,7 +2,7 @@
 
 Route::get('/test',function(){
 
-	return App\Category::find(2)->posts->count();
+	return App\Post::find(4)->profile;
 });
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,11 @@ Route::get('/test',function(){
 Route::get('/', [
 	'uses' => 'FrontEndController@index',
 	'as' =>'index'
+]);
+
+Route::get('/post/{slug}',[
+	'uses' =>'FrontEndController@postSingle',
+	'as' => 'post.single'
 ]);
 
 Auth::routes();
