@@ -5,6 +5,7 @@ use App\Category;
 use App\Post;
 use App\Tag;
 use Session;
+use Auth;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -63,7 +64,8 @@ class PostsController extends Controller
             'content' => $request->content,
             'category_id' => $request->category_id,
             'featured' => 'uploads/posts/'.$featured_new_name,
-            'slug' => str_slug($request->title)
+            'slug' => str_slug($request->title),
+            'user_id' => Auth::id()
         ]);
 
         $post->tags()->attach($request->tags);
