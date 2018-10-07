@@ -36,6 +36,7 @@ class FrontEndController extends Controller
                                ->with('category',$category)
                                ->with('categories',Category::take(7)->get())
                                ->with('settings',Setting::first());
+                               
 
     }
 
