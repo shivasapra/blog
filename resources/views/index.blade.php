@@ -7,7 +7,6 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
                 <article class="hentry post post-standard has-post-thumbnail sticky">
-
                         <div class="post-thumb">
                             <img src="{{$first->featured}}" alt="seo">
                             <div class="overlay"></div>
@@ -52,7 +51,6 @@
                                     </div>
                             </div>
                         </div>
-
                 </article>
             </div>
             <div class="col-lg-2"></div>
@@ -78,7 +76,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title text-center">
-                                        <a href="15_blog_details.html">{{$second->title}}</a>
+                                        <a href="{{route('post.single',['slug'=>$second->slug])}}">{{$second->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -95,7 +93,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$second->category->name}}</a>
+                                            <a href="{{route('category.single',['id'=>$second->category->id])}}">{{$second->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -128,7 +126,7 @@
                             <div class="post__content-info">
 
                                     <h2 class="post__title entry-title text-center">
-                                        <a href="15_blog_details.html">{{$third->title}}</a>
+                                        <a href="{{route('post.single',['slug'=>$third->slug])}}">{{$third->title}}</a>
                                     </h2>
 
                                     <div class="post-additional-info">
@@ -145,7 +143,7 @@
 
                                         <span class="category">
                                             <i class="seoicon-tags"></i>
-                                            <a href="#">{{$third->category->name}}</a>
+                                            <a href="{{route('category.single',['id'=>$third->category->id])}}">{{$third->category->name}}</a>
                                         </span>
 
                                         <span class="post__comments">
@@ -188,7 +186,7 @@
                                                     <div class="case-item__thumb">
                                                         <img src="{{$post->featured}}" alt="our case">
                                                     </div>
-                                                    <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
+                                                    <h6 class="case-item__title"><a href="{{route('post.single',['slug'=>$post->slug])}}">{{$post->title}}</a></h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -217,7 +215,7 @@
                                                     <div class="case-item__thumb">
                                                         <img src="{{$post->featured}}" alt="our case">
                                                     </div>
-                                                    <h6 class="case-item__title"><a href="#">{{$post->title}}</a></h6>
+                                                    <h6 class="case-item__title"><a href="{{route('post.single',['slug'=>$post->slug])}}">{{$post->title}}</a></h6>
                                                 </div>
                                             </div>
                                         </div>
