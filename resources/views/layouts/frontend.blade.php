@@ -83,7 +83,7 @@
 
 <!-- Footer -->
 
-@include('includes.footer')
+    @include('includes.footer')
 
 <!-- End Footer -->
 
