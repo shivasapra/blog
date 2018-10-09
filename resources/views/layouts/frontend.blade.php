@@ -46,6 +46,7 @@
 
     @yield('content')
 
+    
 <!-- Subscribe Form -->
 
 <div class="container-fluid bg-green-color">

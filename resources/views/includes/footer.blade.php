@@ -13,7 +13,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="row">
@@ -55,7 +54,20 @@
                 </div>
             </div>
         </div>
+        
+        <div class="row">
+            <div class="info">
+                <div class="col-lg-6 col-lg-offset-3">
+                    <div class="heading text-center">
+                        <a href="{{route('home')}} " class="text-center"><h1 class="heading-title">Back-end</h1></a>
+                        <div class="heading-line">
+                            <span class="short-line"></span>
+                            <span class="long-line"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
-
 </footer>
