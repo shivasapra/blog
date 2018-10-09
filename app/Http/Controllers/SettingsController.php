@@ -14,7 +14,8 @@ class SettingsController extends Controller
 	}
 
     public function index(){
-    	return view('admin.settings.settings')->with('settings',Setting::first());
+    	return view('admin.settings.settings')->with('settings',Setting::first())
+                                              ->with('settings',Setting::first());
     }
 
     public function update(){

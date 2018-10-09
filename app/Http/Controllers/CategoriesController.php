@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Category;
+use App\Setting;
 use Illuminate\Http\Request;
 use Session;
 class CategoriesController extends Controller
@@ -13,7 +14,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index')->with('categories',Category::all());
+        return view('admin.categories.index')->with('categories',Category::all())
+                                             ->with('settings',Setting::first());
     }
 
     /**
@@ -23,7 +25,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('admin.categories.create');
+        return view('admin.categories.create')->with('settings',Setting::first());
     }
 
     /**
@@ -67,7 +69,8 @@ class CategoriesController extends Controller
     public function edit($id)
     {   
         $category = Category::find($id);
-        return view('admin.categories.edit')->with('category',$category);
+        return view('admin.categories.edit')->with('category',$category)
+                                            ->with('settings',Setting::first());
     }
 
     /**

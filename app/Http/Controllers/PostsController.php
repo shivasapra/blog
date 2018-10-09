@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Post;
 use App\Tag;
+use App\Setting;
 use Session;
 use Auth;
 use Illuminate\Http\Request;
@@ -17,7 +18,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('admin.posts.index')->with('posts',Post::all());
+        return view('admin.posts.index')->with('posts',Post::all())
+                                        ->with('settings',Setting::first());
     }
 
     /**
@@ -37,7 +39,8 @@ class PostsController extends Controller
            }
         
         return view('admin.posts.create')->with('categories',$categories)
-                                         ->with('tags',$tags);
+                                         ->with('tags',$tags)
+                                         ->with('settings',Setting::first());
     }
 
     /**
@@ -96,7 +99,8 @@ class PostsController extends Controller
         $post = post::find($id);
         $categories = Category::all();
         return view('admin.posts.edit')->with('post',$post)->with('categories',$categories)
-                                                           ->with('tags',Tag::all());
+                                                           ->with('tags',Tag::all())
+                                                           ->with('settings',Setting::first());
     }
 
     /**
@@ -152,7 +156,8 @@ class PostsController extends Controller
     public function trashed()
     {
         $posts = Post::onlyTrashed()->get();
-        return view('admin.posts.trashed')->with('posts',$posts);
+        return view('admin.posts.trashed')->with('posts',$posts)
+                                          ->with('settings',Setting::first());
     }
 
 

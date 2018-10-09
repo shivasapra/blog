@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Profile;
+use App\Setting;
 Use Session;
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index')->with('users',User::all());
+        return view('admin.users.index')->with('users',User::all())
+                                        ->with('settings',Setting::first());
     }
 
     /**
@@ -29,7 +31,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        return view('admin.users.create')->with('settings',Setting::first());
     }
 
     /**

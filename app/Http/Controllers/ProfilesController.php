@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Auth;
 use Session;
+use App\Setting;
 use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
@@ -14,7 +15,8 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        return view('admin.users.profile')->with('user',Auth::user());
+        return view('admin.users.profile')->with('user',Auth::user())
+                                          ->with('settings',Setting::first());
     }
 
     /**
